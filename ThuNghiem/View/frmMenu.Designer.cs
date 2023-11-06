@@ -30,66 +30,96 @@
         {
             menuStrip1 = new MenuStrip();
             khoToolStripMenuItem = new ToolStripMenuItem();
-            danhMucKhoToolStripMenuItem = new ToolStripMenuItem();
             hangHoaToolStripMenuItem = new ToolStripMenuItem();
             nhanVienToolStripMenuItem = new ToolStripMenuItem();
-            phieuNhapToolStripMenuItem = new ToolStripMenuItem();
+            thêmPhiếuNhậpToolStripMenuItem = new ToolStripMenuItem();
+            chiTiếtPhiếuNhậpToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.CornflowerBlue;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { khoToolStripMenuItem, hangHoaToolStripMenuItem, nhanVienToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(9, 2, 0, 2);
+            menuStrip1.Size = new Size(1099, 31);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // khoToolStripMenuItem
             // 
-            khoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { danhMucKhoToolStripMenuItem, phieuNhapToolStripMenuItem });
+            khoToolStripMenuItem.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            khoToolStripMenuItem.ForeColor = SystemColors.ControlLightLight;
             khoToolStripMenuItem.Name = "khoToolStripMenuItem";
-            khoToolStripMenuItem.Size = new Size(49, 24);
+            khoToolStripMenuItem.Size = new Size(58, 27);
             khoToolStripMenuItem.Text = "Kho";
-            // 
-            // danhMucKhoToolStripMenuItem
-            // 
-            danhMucKhoToolStripMenuItem.Name = "danhMucKhoToolStripMenuItem";
-            danhMucKhoToolStripMenuItem.Size = new Size(224, 26);
-            danhMucKhoToolStripMenuItem.Text = "Danh muc kho";
-            danhMucKhoToolStripMenuItem.Click += danhMucKhoToolStripMenuItem_Click;
+            khoToolStripMenuItem.Click += khoToolStripMenuItem_Click;
             // 
             // hangHoaToolStripMenuItem
             // 
+            hangHoaToolStripMenuItem.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            hangHoaToolStripMenuItem.ForeColor = SystemColors.ControlLightLight;
             hangHoaToolStripMenuItem.Name = "hangHoaToolStripMenuItem";
-            hangHoaToolStripMenuItem.Size = new Size(88, 24);
-            hangHoaToolStripMenuItem.Text = "Hang hoa";
+            hangHoaToolStripMenuItem.Size = new Size(109, 27);
+            hangHoaToolStripMenuItem.Text = "Hàng Hóa";
+            hangHoaToolStripMenuItem.Click += hangHoaToolStripMenuItem_Click;
             // 
             // nhanVienToolStripMenuItem
             // 
+            nhanVienToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thêmPhiếuNhậpToolStripMenuItem, chiTiếtPhiếuNhậpToolStripMenuItem });
+            nhanVienToolStripMenuItem.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            nhanVienToolStripMenuItem.ForeColor = SystemColors.ControlLightLight;
             nhanVienToolStripMenuItem.Name = "nhanVienToolStripMenuItem";
-            nhanVienToolStripMenuItem.Size = new Size(89, 24);
-            nhanVienToolStripMenuItem.Text = "Nhan vien";
+            nhanVienToolStripMenuItem.Size = new Size(120, 27);
+            nhanVienToolStripMenuItem.Text = "Phiếu Nhập";
             // 
-            // phieuNhapToolStripMenuItem
+            // thêmPhiếuNhậpToolStripMenuItem
             // 
-            phieuNhapToolStripMenuItem.Name = "phieuNhapToolStripMenuItem";
-            phieuNhapToolStripMenuItem.Size = new Size(224, 26);
-            phieuNhapToolStripMenuItem.Text = "Phieu nhap";
-            phieuNhapToolStripMenuItem.Click += phieuNhapToolStripMenuItem_Click;
+            thêmPhiếuNhậpToolStripMenuItem.BackColor = Color.LightSkyBlue;
+            thêmPhiếuNhậpToolStripMenuItem.Name = "thêmPhiếuNhậpToolStripMenuItem";
+            thêmPhiếuNhậpToolStripMenuItem.Size = new Size(264, 28);
+            thêmPhiếuNhậpToolStripMenuItem.Text = "Thêm Phiếu Nhập";
+            thêmPhiếuNhậpToolStripMenuItem.Click += thêmPhiếuNhậpToolStripMenuItem_Click;
+            // 
+            // chiTiếtPhiếuNhậpToolStripMenuItem
+            // 
+            chiTiếtPhiếuNhậpToolStripMenuItem.BackColor = Color.LightSkyBlue;
+            chiTiếtPhiếuNhậpToolStripMenuItem.Name = "chiTiếtPhiếuNhậpToolStripMenuItem";
+            chiTiếtPhiếuNhậpToolStripMenuItem.Size = new Size(264, 28);
+            chiTiếtPhiếuNhậpToolStripMenuItem.Text = "Chi Tiết Phiếu Nhập";
+            chiTiếtPhiếuNhậpToolStripMenuItem.Click += chiTiếtPhiếuNhậpToolStripMenuItem_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 55.8000031F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label1.ForeColor = Color.CornflowerBlue;
+            label1.Location = new Point(30, 202);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(1043, 104);
+            label1.TabIndex = 2;
+            label1.Text = "NHẬT TRẦN LOGISTIC";
             // 
             // frmMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.LightPink;
+            ClientSize = new Size(1099, 518);
+            Controls.Add(label1);
             Controls.Add(menuStrip1);
-            IsMdiContainer = true;
+            Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ForeColor = SystemColors.ControlLightLight;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 3, 4, 3);
             Name = "frmMenu";
-            Text = "frmMenu";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Nhật Trần Logistic";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -100,9 +130,10 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem khoToolStripMenuItem;
-        private ToolStripMenuItem danhMucKhoToolStripMenuItem;
         private ToolStripMenuItem hangHoaToolStripMenuItem;
         private ToolStripMenuItem nhanVienToolStripMenuItem;
-        private ToolStripMenuItem phieuNhapToolStripMenuItem;
+        private ToolStripMenuItem thêmPhiếuNhậpToolStripMenuItem;
+        private ToolStripMenuItem chiTiếtPhiếuNhậpToolStripMenuItem;
+        private Label label1;
     }
 }

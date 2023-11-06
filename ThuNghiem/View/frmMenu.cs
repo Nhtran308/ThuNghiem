@@ -23,14 +23,22 @@ namespace ThuNghiem.View
             hhcontroller = new HangHoaController();
         }
 
-        private void danhMucKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void thêmPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void khoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKho frmKho = new frmKho();
             frmKho.btnLoad_Click(sender, e);
+            this.Hide();
             frmKho.ShowDialog();
         }
 
-        private void phieuNhapToolStripMenuItem_Click(object sender, EventArgs e)
+        private void chiTiếtPhiếuNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPhieuNhap frmPhieuNhap = new frmPhieuNhap();
             HangHoaController hhController = new HangHoaController();
@@ -43,7 +51,16 @@ namespace ThuNghiem.View
             }
             combo.Name = "Tên Hàng Hóa";
             frmPhieuNhap.dgvPhieuNhap.Columns.Insert(1, combo);
+            this.Hide();
             frmPhieuNhap.ShowDialog();
+        }
+
+        private void hangHoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHangHoa frmHangHoa = new frmHangHoa();
+            this.Hide();
+            frmHangHoa.btnLoadHH_Click(sender, e);
+            frmHangHoa.ShowDialog();
         }
     }
 }

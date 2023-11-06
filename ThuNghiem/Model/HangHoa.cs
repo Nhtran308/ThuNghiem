@@ -25,6 +25,15 @@ namespace ThuNghiem.Model
             this.thanhTien = thanhTien;
         }
 
+        public HangHoa(string maHangHoa, string tenHangHoa, string donViTinh, int soLuong, float donGia)
+        {
+            this.maHangHoa = maHangHoa;
+            this.tenHangHoa = tenHangHoa;
+            this.donViTinh = donViTinh;
+            this.soLuong = soLuong;
+            this.donGia = donGia;
+        }
+
         public HangHoa(string maHangHoa, string donViTinh, int soLuong, float donGia, float thanhTien)
         {
             this.maHangHoa = maHangHoa;
@@ -43,6 +52,8 @@ namespace ThuNghiem.Model
         { 
         }
 
+       
+
         public string getMaHangHoa() { return maHangHoa; }
         public void setMaHangHoa(String maHangHoa) { this.maHangHoa = maHangHoa; }
 
@@ -53,7 +64,7 @@ namespace ThuNghiem.Model
         public void setDonViTinh(string donViTinh) { this.donViTinh= donViTinh; }
 
         public int getSoLuong() { return soLuong; }
-        public void setDonGia(int donGia) { this.soLuong = soLuong; }
+        public void setSoLuong(int soLuong) { this.soLuong = soLuong; }
 
         public float getDonGia() {  return donGia; }
         public void setDonGia(float donGia) { this.donGia = donGia; }

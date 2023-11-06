@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKho));
             dgvKho = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             btnLoad = new Button();
             txtMaKho = new TextBox();
             label1 = new Label();
@@ -42,15 +45,13 @@
             btnDelete = new Button();
             btnFind = new Button();
             btnCancel = new Button();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            btnExit = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvKho).BeginInit();
             SuspendLayout();
             // 
             // dgvKho
             // 
-            dgvKho.BackgroundColor = Color.Pink;
+            dgvKho.BackgroundColor = Color.CornflowerBlue;
             dgvKho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvKho.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
             dgvKho.GridColor = SystemColors.InactiveCaptionText;
@@ -61,6 +62,28 @@
             dgvKho.Size = new Size(873, 269);
             dgvKho.TabIndex = 0;
             dgvKho.CellContentClick += dgvKho_CellContentClick;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Mã Kho";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 166;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Tên Kho";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 327;
+            // 
+            // Column3
+            // 
+            Column3.FillWeight = 300F;
+            Column3.HeaderText = "Địa chỉ kho";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 327;
             // 
             // btnLoad
             // 
@@ -79,6 +102,7 @@
             // 
             txtMaKho.Location = new Point(201, 313);
             txtMaKho.Name = "txtMaKho";
+            txtMaKho.PlaceholderText = "Mã kho";
             txtMaKho.Size = new Size(140, 27);
             txtMaKho.TabIndex = 2;
             // 
@@ -108,6 +132,7 @@
             // 
             txtTenKho.Location = new Point(514, 309);
             txtTenKho.Name = "txtTenKho";
+            txtTenKho.PlaceholderText = "Tên kho";
             txtTenKho.Size = new Size(292, 27);
             txtTenKho.TabIndex = 4;
             // 
@@ -126,6 +151,7 @@
             // 
             txtDiaChiKho.Location = new Point(514, 359);
             txtDiaChiKho.Name = "txtDiaChiKho";
+            txtDiaChiKho.PlaceholderText = "Địa chỉ kho";
             txtDiaChiKho.Size = new Size(292, 27);
             txtDiaChiKho.TabIndex = 6;
             // 
@@ -134,7 +160,7 @@
             btnAdd.BackColor = Color.FromArgb(192, 255, 192);
             btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = SystemColors.ControlText;
-            btnAdd.Location = new Point(162, 409);
+            btnAdd.Location = new Point(128, 409);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(106, 29);
             btnAdd.TabIndex = 8;
@@ -147,7 +173,7 @@
             btnEdit.BackColor = Color.FromArgb(255, 255, 192);
             btnEdit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEdit.ForeColor = SystemColors.ActiveCaptionText;
-            btnEdit.Location = new Point(321, 409);
+            btnEdit.Location = new Point(258, 409);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(106, 29);
             btnEdit.TabIndex = 9;
@@ -160,7 +186,7 @@
             btnDelete.BackColor = Color.FromArgb(255, 128, 128);
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = SystemColors.ActiveCaptionText;
-            btnDelete.Location = new Point(484, 409);
+            btnDelete.Location = new Point(386, 409);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(106, 29);
             btnDelete.TabIndex = 10;
@@ -173,7 +199,7 @@
             btnFind.BackColor = Color.FromArgb(192, 192, 255);
             btnFind.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnFind.ForeColor = SystemColors.ActiveCaptionText;
-            btnFind.Location = new Point(644, 409);
+            btnFind.Location = new Point(514, 409);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(106, 29);
             btnFind.TabIndex = 11;
@@ -186,7 +212,7 @@
             btnCancel.BackColor = Color.FromArgb(255, 192, 255);
             btnCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = SystemColors.ActiveCaptionText;
-            btnCancel.Location = new Point(792, 409);
+            btnCancel.Location = new Point(647, 409);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(106, 29);
             btnCancel.TabIndex = 12;
@@ -194,27 +220,18 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
-            // Column1
+            // btnExit
             // 
-            Column1.HeaderText = "Mã Kho";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 166;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tên Kho";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 327;
-            // 
-            // Column3
-            // 
-            Column3.FillWeight = 300F;
-            Column3.HeaderText = "Địa chỉ kho";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 327;
+            btnExit.BackColor = Color.Fuchsia;
+            btnExit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnExit.ForeColor = SystemColors.ActiveCaptionText;
+            btnExit.Location = new Point(781, 409);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(106, 29);
+            btnExit.TabIndex = 13;
+            btnExit.Text = "Thoát";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // frmKho
             // 
@@ -222,6 +239,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
             ClientSize = new Size(900, 450);
+            Controls.Add(btnExit);
             Controls.Add(btnCancel);
             Controls.Add(btnFind);
             Controls.Add(btnDelete);
@@ -239,6 +257,7 @@
             ForeColor = SystemColors.ActiveCaptionText;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmKho";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Kho";
             ((System.ComponentModel.ISupportInitialize)dgvKho).EndInit();
             ResumeLayout(false);
@@ -263,5 +282,6 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
+        public Button btnExit;
     }
 }

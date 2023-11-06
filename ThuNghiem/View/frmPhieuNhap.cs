@@ -12,6 +12,7 @@ using ThuNghiem.Control;
 using ThuNghiem.Model;
 using ThuNghiem.Utils;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ThuNghiem.View
 {
@@ -29,6 +30,8 @@ namespace ThuNghiem.View
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.ShowDialog();
             this.Close();
         }
 
@@ -73,9 +76,29 @@ namespace ThuNghiem.View
 
         private void dgvPhieuNhap_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-            if (dgvPhieuNhap.IsCurrentCellDirty) {
-            dgvPhieuNhap.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            if (dgvPhieuNhap.IsCurrentCellDirty)
+            {
+                dgvPhieuNhap.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
+        }
+
+        private void txtSoPhieu_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection conn = DataHelper.getConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM PhieuNhap WHERE MaPhieuNhap = N'" + txtSoPhieu.Text + "'", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                txtSoPhieu.Text = reader["MaPhieuNhap"].ToString();
+                txtSoHopDong.Text = reader["SoHoaDon"].ToString();
+                txtMaKho.Text = reader["MaKho"].ToString();
+                txtNgay.Text = Convert.ToDateTime(reader["NgayNhapKho"]).ToString("dd/MM/yyyy");
+                txtNgayHopDong.Text = Convert.ToDateTime(reader["NgayHoaDon"]).ToString("dd/MM/yyyy");
+                txtNguoiGiaoHang.Text = reader["NguoiGiaoHang"].ToString();
+                txtDonViPhatHanh.Text = reader["DonViPhatHanh"].ToString();
+            }
+            conn.Close();
         }
     }
 }

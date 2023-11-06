@@ -130,5 +130,12 @@ namespace ThuNghiem.View
             txtTenKho.Clear();
             txtDiaChiKho.Clear();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            this.Close();
+            frmMenu.ShowDialog();
+        }
     }
 }
