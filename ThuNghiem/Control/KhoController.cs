@@ -18,7 +18,7 @@ namespace ThuNghiem.Control
         List<Kho> khoList;
         public KhoController() 
         { 
-        khoList = new List<Kho>();
+          khoList = new List<Kho>();
         }
 
         public List<Kho> Load()

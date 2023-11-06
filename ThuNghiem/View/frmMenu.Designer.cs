@@ -33,6 +33,7 @@
             danhMucKhoToolStripMenuItem = new ToolStripMenuItem();
             hangHoaToolStripMenuItem = new ToolStripMenuItem();
             nhanVienToolStripMenuItem = new ToolStripMenuItem();
+            phieuNhapToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             // khoToolStripMenuItem
             // 
-            khoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { danhMucKhoToolStripMenuItem });
+            khoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { danhMucKhoToolStripMenuItem, phieuNhapToolStripMenuItem });
             khoToolStripMenuItem.Name = "khoToolStripMenuItem";
             khoToolStripMenuItem.Size = new Size(49, 24);
             khoToolStripMenuItem.Text = "Kho";
@@ -71,6 +72,13 @@
             nhanVienToolStripMenuItem.Name = "nhanVienToolStripMenuItem";
             nhanVienToolStripMenuItem.Size = new Size(89, 24);
             nhanVienToolStripMenuItem.Text = "Nhan vien";
+            // 
+            // phieuNhapToolStripMenuItem
+            // 
+            phieuNhapToolStripMenuItem.Name = "phieuNhapToolStripMenuItem";
+            phieuNhapToolStripMenuItem.Size = new Size(224, 26);
+            phieuNhapToolStripMenuItem.Text = "Phieu nhap";
+            phieuNhapToolStripMenuItem.Click += phieuNhapToolStripMenuItem_Click;
             // 
             // frmMenu
             // 
@@ -95,5 +103,6 @@
         private ToolStripMenuItem danhMucKhoToolStripMenuItem;
         private ToolStripMenuItem hangHoaToolStripMenuItem;
         private ToolStripMenuItem nhanVienToolStripMenuItem;
+        private ToolStripMenuItem phieuNhapToolStripMenuItem;
     }
 }
