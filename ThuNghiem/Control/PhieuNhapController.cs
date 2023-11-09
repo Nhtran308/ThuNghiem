@@ -20,10 +20,12 @@ namespace ThuNghiem.Control
     internal class PhieuNhapController
     {
         List<PhieuNhap> dsPhieuNhap;
+        List<ChiTietPhieuNhap> dsCTPN;
 
         public PhieuNhapController()
         {
             dsPhieuNhap = new List<PhieuNhap>();
+            dsCTPN = new List<ChiTietPhieuNhap>();
         }
 
         public List<PhieuNhap> Load()
@@ -57,6 +59,28 @@ namespace ThuNghiem.Control
                 conn.Close();
             }
             return dsPhieuNhap;
+        }
+
+        public bool Insert(ChiTietPhieuNhap ctpn)
+        {
+            SqlConnection conn = DataHelper.getConnection();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("", conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thông tin bị trùng hoặc không đúng", "Thông báo", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
         }
     }
 }

@@ -79,7 +79,7 @@ namespace ThuNghiem.View
 
         private void dgvKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgvKho.Rows[e.RowIndex];
                 txtMaKho.Text = row.Cells[0].Value.ToString();
